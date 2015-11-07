@@ -99,9 +99,5 @@ deploy:
 # search
 # swiftype_key: ZP2ZSuHgipSZfRyU8uTR
 
-backup:
-    type: git
-    repository:
-       github: git@github.com:orangle/blog_backup.git,master
 
 
