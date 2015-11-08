@@ -2,8 +2,8 @@ title: lzz的编程之旅2015-Pycon
 comments: true
 toc: true
 date: 2015-10-14 18:17:48
-tags: 编程之旅
-categories: 随想
+tags: [编程之旅]
+categories: [随想]
 ---
 
 <!-- more -->

@@ -3,7 +3,7 @@ comments: true
 toc: true
 date: 2015-03-14 20:17:48
 tags: [架构,优化]
-categories: 分享
+categories: [分享]
 ---
 
 <!-- more -->

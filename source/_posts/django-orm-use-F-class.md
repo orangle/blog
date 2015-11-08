@@ -2,8 +2,8 @@ title: django-orm中F对象的使用
 comments: true
 toc: true
 date: 2014-10-22 16:58:48
-tags: djangoorm
-categories: django
+tags: [django,orm]
+categories: [编程]
 ---
 
 <!-- more -->

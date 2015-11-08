@@ -2,8 +2,8 @@ title: hexo 博客使用记
 comments: true
 toc: true
 date: 2015-11-04 15:25:04
-tags: hexo
-categories: 折腾
+tags: [hexo]
+categories: [折腾]
 ---
 
 > Github Pages用了大概一年多，之前的都是基于jekll的，但是比较懒，加上弄得主题不好看，也就没怎么写文章了，这两日看到以前的伙伴弄了个hexo主题的静态博客，于是也来尝尝鲜，学习学习，花了几个小时搭建好了。

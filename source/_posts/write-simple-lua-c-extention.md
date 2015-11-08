@@ -2,8 +2,8 @@ title: Lua C拓展-sleep函数
 comments: true
 toc: true
 date: 2015-03-23 20:17:48
-tags: lua
-categories: 编程
+tags: [lua]
+categories: [编程]
 ---
 
 <!-- more -->

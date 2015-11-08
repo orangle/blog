@@ -3,7 +3,7 @@ comments: true
 toc: true
 date: 2015-05-23 20:17:48
 tags: [python,性能]
-categories: 翻译
+categories: [翻译]
 ---
 
 <!-- more -->
