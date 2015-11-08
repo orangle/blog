@@ -94,7 +94,7 @@ deploy:
   message: ""
   repo:
     github: git@github.com:orangle/orangle.github.io.git,master
-    gitcafe: git@gitcafe.com:orangleliu/orangleliu.git,gitcafe-pages
+    #gitcafe: git@gitcafe.com:orangleliu/orangleliu.git,gitcafe-pages
 
 # search
 # swiftype_key: ZP2ZSuHgipSZfRyU8uTR

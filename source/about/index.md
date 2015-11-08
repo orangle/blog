@@ -11,12 +11,46 @@ date: 2015-11-04 14:21:06
 * 13.11~14.10  [Chinacache](http://www.chinacache.com/)  **Python Dev**
 * 14.10~Now  [I-erya](http://www.i-erya.com/)   **Python Dev**
 
+## skills
+
+#### 编程语言
+
++ Python
++ Lua
++ Golang
++ Java
+
+#### Python
+
++ Django
++ Tornado
++ Celery
++ uWsgi
+
+#### Linux
+
++ shell
++ nginx openresty
+
+#### DB
+
++ Mysql
++ Redis
++ Oracle
+
+#### Web
+
++ html
++ css
++ javascript
+
+
 ## you can find me
 * [Github](https://github.com/orangle)
-* Email:  957748332#qq.com
+* Email:  orangleliu#gmai.com
 
 ## say
 
 * 感谢家人
 
-**Welcome Exchange**
+**欢迎交流**
