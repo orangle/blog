@@ -2,8 +2,8 @@ title: lzz的编程之旅2015-4
 comments: true
 toc: true
 date: 2015-11-15 13:16:24
-tags: 编程之旅
-categories: 随想
+tags: [编程之旅]
+categories: [随想]
 ---
 
 <!-- more -->
