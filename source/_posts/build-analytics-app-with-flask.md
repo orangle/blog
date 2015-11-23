@@ -2,8 +2,8 @@ title: Flask构建网站分析应用
 comments: true
 toc: true
 date: 2015-11-23 13:50:11
-tags: [flask]
-categories: [统计分析]
+tags: [flask, 埋点]
+categories: [翻译]
 ---
 
 <!-- more -->
@@ -74,7 +74,7 @@ $ pip install gevent  #  Optional.
 
 ### 实现Flask应用
 
-让我们从整体代码框架开始吧。 正如前面讨论的，我们将会创建2个 view，一个用来返回 JavaScript 文件，另一个用来创建1像素的GIF图片。 在 `analytics`目录（这是作者开发使用的目录，没有请自行创建），创建 `analytics.py` 文件，代码在下面列出。 这些代码包括了应用的代码结构，还有基本配置。 
+让我们从整体代码框架开始吧。 正如前面讨论的，我们将会创建2个 view，一个用来返回 JavaScript 文件，另一个用来创建1像素的GIF图片。 在 `analytics`目录（这是作者开发使用的目录，没有请自行创建），创建 `analytics.py` 文件，代码在下面列出。 这些代码包括了应用的代码结构，还有基本配置。
 
 ```
 #coding:utf-8
@@ -269,7 +269,7 @@ def analyze():
 
 ```
 <script src="http://127.0.0.1:5000/a.js" type="text/javascript"></script>
-```  
+```
 
 为了把应用部署到生产环境，建议使用专用的 WSGI 服务器。我喜欢用 gevent，非常轻量和高性能。你可以修改 analytics.py 文件，使用 gevent 代替原来的 Flask server。 下面是使用 gevent 来运行应用在 5000端口的写法：
 
@@ -314,7 +314,7 @@ from gevent import monkey; monkey.patch_all()
 
 访问最多的10个页面？
 
-```python 
+```python
 print (base
        .select(PageView.title, fn.Count(PageView.id))
        .group_by(PageView.title)
@@ -361,7 +361,7 @@ print (base
 
 哪些 user-agents 最流行呢？
 
-```python 
+```python
 from collections import Counter
 c = Counter(pv.headers.get('User-Agent') for pv in base)
 print c.most_common(5)
@@ -427,4 +427,4 @@ print {pv.ip: pv.urls.split(',') for pv in query[:10]}
 
 ### 感谢阅读
 
-感谢阅读，有什么问题请联系我。 项目的 [gist地址在这](https://gist.github.com/coleifer/9899de010c647823a14f) 
+感谢阅读，有什么问题请联系我。 项目的 [gist地址在这](https://gist.github.com/coleifer/9899de010c647823a14f)
