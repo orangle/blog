@@ -85,7 +85,7 @@ plugins:
 
 
 ## Themes: http://hexo.io/themes/
-theme: next
+theme: hexo-theme-next 
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
