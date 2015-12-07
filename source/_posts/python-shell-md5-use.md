@@ -26,7 +26,7 @@ categories: [密码学]
 #### Shell 方式
 一般都会有 `md5sum` 命令(Centos)
 
-````
+```
 # echo -n "sweet girl"|md5sum
 74417797d6a7200192978659effa5e2d -
 ```
