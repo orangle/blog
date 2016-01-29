@@ -13,41 +13,15 @@ date: 2015-11-04 14:21:06
 
 ## skills
 
-#### 编程语言
-
-+ Python
-+ Lua
-+ Golang
-+ Java
-
-#### Python
-
-+ Django
-+ Tornado
-+ Celery
-+ uWsgi
-
-#### Linux
-
-+ shell
-+ nginx openresty
-
-#### DB
-
-+ Mysql
-+ Redis
-+ Oracle
-
-#### Web
-
-+ html
-+ css
-+ javascript
-
++ Python, Lua, Java
++ Django, Tornado, Celery, uWsgi
++ shell, nginx, openresty
++ Mysql, Redis, Oracle
 
 ## you can find me
 * [Github](https://github.com/orangle)
 * Email:  orangleliu#gmai.com
+<script type="text/javascript" src="http://www.douban.com/service/badge/orangle_liu/?selection=random&amp;picsize=medium&amp;show=collection&amp;n=8&amp;cat=book&amp;columns=4"></script>
 
 ## say
 
