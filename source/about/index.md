@@ -20,7 +20,7 @@ date: 2015-11-04 14:21:06
 
 ## you can find me
 * [Github](https://github.com/orangle)
-* Email:  orangleliu#gmai.com
+* Email:  orangleliu#gmail.com
 <script type="text/javascript" src="http://www.douban.com/service/badge/orangle_liu/?selection=random&amp;picsize=medium&amp;show=collection&amp;n=8&amp;cat=book&amp;columns=4"></script>
 
 ## say

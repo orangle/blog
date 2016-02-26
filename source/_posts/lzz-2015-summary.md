@@ -2,8 +2,8 @@ title: lzz的2015年度小结
 comments: true
 toc: true
 date: 2016-01-03 20:17:57
-tags: [随想]
-categories: [编程之旅, 总结]
+tags: [编程之旅, 总结]
+categories: [随想]
 ---
 
 <!-- more -->
