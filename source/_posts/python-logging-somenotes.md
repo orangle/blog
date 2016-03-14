@@ -7,7 +7,7 @@ categories: [编程]
 ---
 
 <!-- more -->
-> 因为日志模块是线程安全的，在单进程应用中一般的问题集中在如何切分等，多进程相对来说就要复杂一些，可能需要一些自己定制的handler。
+> 标准库logging模块是线程安全的，在单进程应用中一般的问题集中在如何切分等，多进程中使用logging相对来说就要复杂一些，需要定制的handler来解决多进程安全问题，或者使用开源方案来解决。下面零零散散记录一些使用的心得。
 
 
 ### 日志切分
@@ -15,35 +15,35 @@ categories: [编程]
 logging标准库中提供的日志切分的方式有
 
 * TimedRotatingFileHandler 基于文件大小的切分，支持多个backup
-* RotatingFileHandler 基于时间间隔的切分，支持多种时间单位，多个backup。 启动时查询log文件最后修改的时间戳当做start计算时间，如果要是定义24小时切割一次，而程序12小时重启一次，那么永远都不会切割日志，这就是它不好的地方。 很多时候是希望它根据日志文件的创建时间来计算时间差。
-* 很多时候需要能按整点时间轮询的日志 例如每天只是这一天24小时的记录，每小时只是当前这个小时的记录。标准库无法满足，需要自己写handler
+* RotatingFileHandler 基于时间间隔的切分，支持多种时间单位，多个backup。 这种方式在程序启动时会用log文件最后修改的时间戳做start time计算，如果我定义24小时切割一次，而程序每12小时重启一次，那么永远都不会切割日志，因为每次程序启动到结束不够24小时，这就是它不好的地方。
+* 很多时候需要能按整点时间轮询的日志 例如每天只是这一天24小时的记录，每小时只是当前这个小时的记录。标准库无法满足，需要自己写handler，当然现成的轮子也很多。
 
 
 当日志文件被移动或删除后:
 
 * FileHandler会继续将日志输出至原有的文件描述符, 从而导致日志切分后日志丢失.
-* WatchedFileHandler会检测文件是否被移动或删除, 如果有, 会新建日志文件, 并输出日志到新建的文件. 这个handerl+corntab可以实现日志的割切。
+* WatchedFileHandler会检测文件是否被移动或删除, 如果有, 会新建日志文件, 并输出日志到新建的文件. 这个handerl+corntab可以很容易的实现日志的割切。
 
 
 
 ### 多进程日志
 
-* 同步输出: 看到有些是使用文件锁来实现实现同步，也看到有些是使用多进程的queue来实现同步，或者使用通过 sockethandler 传送给单独服务
-*  多进程往一个日志文件写日志（日志可能会错行，变得杂乱无序），然后用cron这种外部工具来切分日志
+* 多进程往一个日志文件写日志（日志可能会错行，变得杂乱无序)
+* 进程安全方案: 看到有些方案是使用文件锁来实现实现同步，也看到有些是使用多进程的queue来实现同步，或者通过 sockethandler 传送给单独服务
 
 
 #### ConcurrentLogHandler
 
-看到stackoverflow 上很多人回答用 [ConcurrentLogHandler](https://pypi.python.org/pypi/ConcurrentLogHandler/0.9.1)来解决问题，RotatingFileHandler的多进程版本，它主要使用文件锁来保持同步。
+看到stackoverflow上很多人回答用 [ConcurrentLogHandler](https://pypi.python.org/pypi/ConcurrentLogHandler/0.9.1)来解决多logging进程安全问题，它是RotatingFileHandler的多进程版本，使用`文件锁`来保持同步。
 
-源码[在这里](http://bazaar.launchpad.net/~lowell-alleman/python-concurrent-log-handler/master/files),  下载下来，结合多进程Gunicorn来测测，使用方法[参见文档](https://pypi.python.org/pypi/ConcurrentLogHandler/0.9.1)，非常简单方面.
+源码[在这里](http://bazaar.launchpad.net/~lowell-alleman/python-concurrent-log-handler/master/files), 结合多进程Gunicorn+Django来测了测，使用方法[参见文档](https://pypi.python.org/pypi/ConcurrentLogHandler/0.9.1)，非常简单方面.
 
-我这里1000并发测试的情况下，性能影响不大，大概百分之十（这个主要取决于日志的复杂度），日志同步和轮询都没问题。 更大规模和复杂的情况还不清楚会怎样，在小程序中使用应该问题不大，要求较高的系统需要进一步测试。
+我这1000并发测试的情况下，性能影响不大，TPS 大概百分之十（这个主要取决于日志的复杂度）损耗，日志同步和轮询都没问题。 更大规模和复杂的情况还不清楚会怎样，在小程序中使用应该问题不大，要求较高的系统需要进一步测试。
 
 
 ### socket 日志
 
-官方的 [loging cookbook](https://docs.python.org/2/howto/logging-cookbook.html) 中推荐在多进程中使用 `SocketHandler`来解决日志问题, 还给出来一个简单的例子 [here](https://docs.python.org/2/howto/logging-cookbook.html#sending-and-receiving-logging-events-across-a-network)。 还有很多开源的方案Syslog，Sentry，或者Github找些别人写的日志收集server，自己撸一个轮子等，选择很多，适合日志集中收集管理。
+官方的 [loging cookbook](https://docs.python.org/2/howto/logging-cookbook.html) 中推荐在多进程中使用 `SocketHandler`来解决日志问题, 还给出来一个简单的例子 [here](https://docs.python.org/2/howto/logging-cookbook.html#sending-and-receiving-logging-events-across-a-network)。 另外还有很多开源的方案，Syslog，Sentry，或者Github找些别人写的日志收集server，自己撸一个轮子等，选择很多，适合日志集中收集管理。
 
 
 ### 使用总结
@@ -66,7 +66,7 @@ except Exception as e:
 
 ### 源码阅读
 
-看的是 python2.6 的logging模块源码，[源码在这里](https://github.com/python/cpython/tree/2.6/Lib/logging)。日志相关的是 `pep282`， logging模块的参照是 apache `log4j` 日志系统。
+python2.6 的logging模块源码，[源码在这里](https://github.com/python/cpython/tree/2.6/Lib/logging)。日志相关的是PEPE是 `pep282`。
 
 
 logging模块一共是3个文件
@@ -74,7 +74,6 @@ logging模块一共是3个文件
 *  `__init__.py`  常量定义，基础的API，logger，handler的父类，handler的适配器等等，最核心的代码
 *  `config.py`  配置读取相关模块
 * `handlers.py`  不同的handlers来处理日志的输出策略，如果自己写handler 这里是最好的例子
-
 
 
 #### 通过代码来看看使用 basicConfig 发生了什么？
