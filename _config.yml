@@ -5,12 +5,10 @@
 # Site
 title: Orangleliu Notes
 subtitle: 爱媳妇，爱生活，Linux，Python
-description: lzz的编程之旅
+description: "lzz的编程之旅, Linux, python，lua，openresty"
 author: orangleliu
 language: zh-Hans
 timezone:
-
-
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -84,8 +82,14 @@ plugins:
 - hexo-generator-tag
 
 
+# hexo sitemap网站地图
+sitemap:
+path: sitemap.xml
+baidusitemap:
+path: baidusitemap.xml
+
 ## Themes: http://hexo.io/themes/
-theme: hexo-theme-next 
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

@@ -77,6 +77,22 @@ hexo d
 
 如果要对主题再次定制，请fork一个项目，然后即时提交更改。 防止本地文件删除了，啥都没了的悲剧
 
+* 修改文章生成的模板
+
+在`scaffolds` 目录下，有 `post.md`, `draft.md`, `page.md` 的一个生成模板, 我的修改如下
+
+```
+title: {{ title }}
+date: {{ date }}
+comments: true
+toc: true
+tags:
+categories:
+---
+
+<!-- more -->
+```
+
 * github 访问慢
 
 可以在gitcafe上也部署一个Pages，然后通过dns区分国内外用户访问github，或者gitcafe的Pages的服务 （gitcafe需要添加一个 `.nojekyll`的文件在source目录下）
@@ -84,6 +100,10 @@ hexo d
 * 文章备份
 
 可以使用插件来解决
+
+* seo等
+
+google上有一些 hexo的seo教程，可以简单弄一弄，提高一点收录量
 
 
 ### 参考链接
