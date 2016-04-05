@@ -1,8 +1,8 @@
-title: lzz的阅读记录201601
+title: lzz's reading list 03
 comments: true
 toc: true
 date: 2016-01-27 14:11:14
-tags: [阅读]
+tags: [reading]
 categories: [他山之石]
 ---
 

@@ -1,7 +1,7 @@
-# robots.txt
 User-agent: *
 Allow: /
 Allow: /archives/
+Allow: /categories/
 
 Disallow: /vendors/
 Disallow: /js/
