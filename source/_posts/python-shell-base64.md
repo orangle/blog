@@ -19,7 +19,7 @@ categories: [密码学]
 
 ### Shell中使用
 
-一般Linux系统中都会有个base64的命令，openssl命令也有base的选项。
+一般Linux系统中都会有个base64的命令，openssl命令也有base64的选项。
 
 #### base64 命令
 
