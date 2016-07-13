@@ -26,16 +26,23 @@ categories:
 * [Python2010 The Mighty Dictionary](https://www.youtube.com/watch?v=C4Kc8xzcA68) Python dict 数据类型的分析(视频）
 * [Brandon Rhodes talks](http://rhodesmill.org/brandon/)  Brandon Rhodes的演讲列表，他是Dropbox的工程师，多次在Pycon上分享，非常多的干货啊
 
-### 其他
+
+### 博客文章
+
 
 * [Easier data analysis in Python with pandas (video series)](http://www.dataschool.io/easier-data-analysis-with-pandas/) 通过pandas学习数据分析的系列视频课程。
 * [5 reasons you need to learn to write Python decorators](https://www.oreilly.com/ideas/5-reasons-you-need-to-learn-to-write-python-decorators) 学习Python装饰器的5个理由，讲述了装饰器的常见几大用途。包括验证，运行时间统计，日志，创建框架，重用代码等等。（不过最后带了点广告）
+* [The Basics of Data Compression 哈夫曼编码](http://www.openbookproject.net/py4fun/huffman/huffman.html) 哈夫曼编码的Python实现，没有采用类，而是用字典和元组非常简单方面的实现了静态Huffmanb编码和解码
+
+
+
 
 ## Bash
 
 * [GUN Bash:An Introduction to Advanced Usage](http://cdn.oreillystatic.com/en/assets/1/event/115/Introduction%20to%20Advanced%20Bash%20Usage%20Presentation.pdf) bash编程要点总结，非常实用，学习复习的好资料, 适合有一定bash经验，但是又不是很熟的人
+* [vim打造看c源代码的环境](http://www.chongh.wiki/blog/2016/05/25/sourceinsight-linux/) 有需求就看看，看源码方面一点
 
-
+1
 ## CS基础
 
 * [csapp public](http://csapp.cs.cmu.edu/public/students.html) csapp(深入理解计算机系统) 这本书的官方网站，包括一些资源链接和实验等
@@ -46,8 +53,31 @@ categories:
 * [浅谈数据库用户表结构设计](http://wpceo.com/user-database-table-design/) 针对接入多重登录方式的用户表设计
 
 
+## 有用的网址
 
-## 活着
+* [Weekly Python Chat](http://www.weeklypython.chat/) 用在线视频聊天室的形式，分享一些Python，开源等相关的知识。 可以看直播也可以看回放，每周一次，有些主题还不错（看视频需要梯子。。，主要是形式还听新颖）
+
+
+### 安全相关网站
+用来获取和学习安全知识的平台
+
+提交平台
+
+* 乌云       
+* 漏洞盒子
+* sobug 提交平台
+* 补天
+* [seebug](https://www.seebug.org) 漏洞提交，模式有点不一样
+
+安全知识
+
+* 乌云知识库  比较专业的技术分析
+* FreeBuf  安全资讯，以及技术文章等
+* [阿里安全响应中心](https://security.alibaba.com/?spm=a219k.7941681.0.0.Am1A99) 有一些漏洞分析
+
+
+
+## 活着 5~6月
 
 * `专注` 这一段时间开始渐渐少关注聊天群还有微信，更多的时间花在项目开发上，业余的时间基本都是再看算法基础和操作系统基础。 这样还不错，就是看的多动手的少，要加强动手能力，把想到的理解的用实验或者模拟的方式直观的理解，还欠缺这个。
 
