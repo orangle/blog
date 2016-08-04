@@ -1,4 +1,4 @@
-title: learn-algorithm-graph
+title: 数据结构－图
 comments: true
 toc: true
 date: 2016-07-13 14:47:56
@@ -26,3 +26,5 @@ categories:
 * `网` 带权的图称为网
 
 
+## 学习资料
+* [数据结构之图](https://www.zybuluo.com/guoxs/note/249812#数据结构之图) 写的非常详尽，没看完，感觉不错。
