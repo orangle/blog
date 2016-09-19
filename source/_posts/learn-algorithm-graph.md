@@ -2,8 +2,8 @@ title: 数据结构－图
 comments: true
 toc: true
 date: 2016-07-13 14:47:56
-tags:
-categories:
+tags: [图]
+categories: [数据结构]
 ---
 
 <!-- more -->

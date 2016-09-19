@@ -3,7 +3,7 @@ comments: true
 toc: true
 date: 2016-05-19 17:46:03
 tags: [cmd]
-categories:
+categories: [linux]
 ---
 
 <!-- more -->
@@ -95,6 +95,3 @@ find . -name "*.bak" -print0 | xargs -0 -I file mv file ~/old.files
 
 
 实际使用中，复杂的操作比较少，暂且记录那么多。
-
-
-
