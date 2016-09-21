@@ -28,14 +28,10 @@ categories: [技术分享]
 
 注意下权限问题 ，配置完成`reload nginx` 就能访问了。
 
-
-
 ## 自动更新shell脚本
-
 从github拉取代码，然后强制更新所有内容。
 
 git_update.sh
-
 ```
 
 #! /bin/bash
@@ -56,10 +52,7 @@ echo "success $dtime"  > d.txt
 ##  配置webhook
 
 在github上配置这个项目的webhook，然后在openresty中写一个http接口来出来每次github发来的 `push事件`。
-
 [webhook的设置文档](https://developer.github.com/webhooks/) ，这里设置成  http://xxx.info/hook
-
-
 
 修改nginx配置
 ```
@@ -78,7 +71,6 @@ echo "success $dtime"  > d.txt
         }
    }
 ```
-
 
 
 lua脚本
@@ -108,5 +100,7 @@ os.execute("bash /www/blog_update.sh");
 ngx.say("OK")
 ngx.exit(200)
 ```
+
+注意！github发送的请求可能playload比较大，这时候 `ngx.req.get_body_data()` 就无法正常获取内容，可以通过调整 `client_body_buffer_size 100k;` 配置来解决
 
 [参考文章](http://blog.liaol.net/2015/06/use-github-webhooks-to-deploy-hexo/)
