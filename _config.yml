@@ -74,7 +74,7 @@ tag_generator:
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
-# plugins:
+#plugins:
 # - hexo-generator-feed
 # - hexo-generator-sitemap
 # - hexo-generator-index
