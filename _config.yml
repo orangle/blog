@@ -74,22 +74,20 @@ tag_generator:
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
-plugins:
-- hexo-generator-feed
-- hexo-generator-sitemap
-- hexo-generator-index
-- hexo-generator-archive
-- hexo-generator-tag
+# plugins:
+# - hexo-generator-feed
+# - hexo-generator-sitemap
+# - hexo-generator-index
+# - hexo-generator-archive
+# - hexo-generator-tag
 
 
 # hexo sitemap网站地图
 sitemap:
 path: sitemap.xml
-baidusitemap:
-path: baidusitemap.xml
 
 ## Themes: http://hexo.io/themes/
-theme: hexo-theme-next
+theme: next 
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -98,10 +96,7 @@ deploy:
   message: ""
   repo:
     github: git@github.com:orangle/orangle.github.io.git,master
-    #gitcafe: git@gitcafe.com:orangleliu/orangleliu.git,gitcafe-pages
 
-# search
-# swiftype_key: ZP2ZSuHgipSZfRyU8uTR
 
 
 
